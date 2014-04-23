@@ -8,12 +8,6 @@ $doc->addScript(JURI::root().'/modules/mod_adv_slider/js/jsCarousel-2.0.0.js');
 require_once JPATH_ROOT . '/components/com_banners/helpers/banner.php';
 $baseurl = JURI::base();
 
-
-
-
-
-
-
 ?>
 
 <script type="text/javascript">
@@ -41,15 +35,12 @@ $baseurl = JURI::base();
                         <?php foreach($imagelist as $item): ?>
 
                                 <?php $imageurl = $item->params->get('imageurl');?>
-                                <?php $width = $item->params->get('width');?>
-                                <?php $height = $item->params->get('height');?>
+                               
 
                                 <div>
                                     <img
                                     src="<?php echo $baseurl . $imageurl;?>"
                                     alt="<?php echo $alt;?>"
-                                    <?php if (!empty($width)) echo 'width ="'. $width.'"';?>
-                                    <?php if (!empty($height)) echo 'height ="'. $height.'"';?>
                                     /><br />
 
                                     <span class="thumbnail-text"><?php echo htmlspecialchars($item->name, ENT_QUOTES, 'UTF-8');?>  </span>

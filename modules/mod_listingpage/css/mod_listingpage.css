@@ -71,16 +71,23 @@ span{
 	text-decoration: underline;
 }
 
-
 .main-body .mb-content .mb-detail h1{
 	font-size: 16px;
 
 }
 
 .main-body .mb-content img{
-	margin:10px 0 0 10px;
+/*	margin:10px 0 0 10px;
+	width: 130px;
+	height: 150px;*/
+
 	width: 130px;
 	height: 150px;
+	margin: 5px 0 0;
+	padding: 5px;
+	border: 1px solid #cecece;
+	background: #fff;
+
 }
 
 .main-body .mb-content img:hover{

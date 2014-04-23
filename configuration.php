@@ -22,12 +22,12 @@ class JConfig {
 	public $gzip = '0';
 	public $error_reporting = 'development';
 	public $helpurl = 'http://help.joomla.org/proxy/index.php?option=com_help&keyref=Help{major}{minor}:{keyref}';
-	public $ftp_host = '127.0.0.1';
+	public $ftp_host = '192.168.2.16';
 	public $ftp_port = '21';
 	public $ftp_user = 'admin';
 	public $ftp_pass = 'admin';
 	public $ftp_root = '';
-	public $ftp_enable = '0';
+	public $ftp_enable = '1';
 	public $offset = 'UTC';
 	public $mailer = 'mail';
 	public $mailfrom = 'sealite@gmail.com';
