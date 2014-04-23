@@ -1,0 +1,35 @@
+<?xml version='1.0'?>
+<extension type='module' version='2.5.0' method='upgrade'>
+	<name>Advertise Slider</name>
+	<author>Archie Lopez</author>
+	<version>1.0.0</version>
+	<description>This is for the advertisement</description>
+	<files>
+		<filename>mod_adv_slider.xml</filename>
+		<filename module='mod_adv_slider'>mod_adv_slider.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>css</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic"
+				addfieldpath="/administrator/components/com_banners/models/fields">
+				<field
+					name="catid"
+					type="category"
+					extension="com_banners"
+					label="Banner Category"
+					multiple="true" size="5"
+					default=""
+					description="Banenr Category ID" >
+					<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>

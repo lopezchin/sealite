@@ -1,0 +1,91 @@
+/** listing page **/
+
+/*global*/
+
+span{
+	display:block;
+}
+
+.lpclear{
+	clear:both;
+}
+
+.imgDisplay{
+	display:none;
+}	
+
+/* listing page css */
+
+.main-body{
+	border: 1px solid #cecece;
+}
+
+.main-body .mb-title{
+	padding:10px;
+	text-transform: uppercase;
+	background: #f1f1f1;
+	color:#545353;
+	font-size: 18px;
+	border-bottom: 1px dashed #cecece;
+}
+
+.main-body .mb-main--cont{
+	padding: 10px 10px;
+}
+
+.main-body .mb-content{
+	margin: 0 0 10px;
+	padding: 5px;
+	background: #f1f1f1;
+	border-radius: 10px;
+	border: 1px solid #cecece;
+}
+
+.main-body .mb-content .mb-detail{
+	float:left; 
+	width: 80%;
+}
+
+.main-body .mb-content .no-img{
+	
+	width: 100%!important;
+}
+
+.main-body .mb-content h1{
+	font-size: 16px;
+	color: #545353!important;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.main-body .mb-content .gfbemail{
+	text-align: right;
+}
+
+.main-body .mb-content .gfbemail a{
+	color:#252557;
+	text-decoration: none;
+}
+
+.main-body .mb-content .gfbemail a:hover{
+	text-decoration: underline;
+}
+
+
+.main-body .mb-content .mb-detail h1{
+	font-size: 16px;
+
+}
+
+.main-body .mb-content img{
+	margin:10px 0 0 10px;
+	width: 130px;
+	height: 150px;
+}
+
+.main-body .mb-content img:hover{
+	opacity: 0.4 ;
+}
+
+
+

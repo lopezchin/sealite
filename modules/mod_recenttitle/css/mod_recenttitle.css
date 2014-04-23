@@ -1,0 +1,16 @@
+/** mod_recenttitle **/
+
+.rtitle--head{
+	padding: 7px 0;
+	border: 1px solid #72f1c8;
+	border-radius: 10px;
+	background: #f2f2f2;
+	text-align: center;
+}
+
+.rtitle{
+	font-family: Arial,sans-serif;
+	font-size: 1.4em;
+	font-weight: bold;
+	color: #252557;
+}

@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+<extension type='module' version='2.5.0' method='upgrade'>
+	<name>recent title</name>
+	<author>Archie Lopez</author>
+	<version>1.0.0</version>
+	<description>This is for the single title</description>
+	<files>
+		<filename>mod_recenttitle.xml</filename>
+		<filename module='mod_recenttitle'>mod_recenttitle.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>css</folder>
+	</files>
+	<config>
+	</config>
+</extension>

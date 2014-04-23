@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+<extension type='module' version='2.5.0' method='upgrade'>
+	<name>Distributor List</name>
+	<author>Philwebservices Joomla Dev</author>
+	<version>1.0.0</version>
+	<description>This is distributor list</description>
+	<files>
+		<filename>mod_distributorlist.xml</filename>
+		<filename module='mod_distributorlist'>mod_distributorlist.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>css</folder>
+	</files>
+	<config>
+	</config>
+</extension>

@@ -1,0 +1,112 @@
+/** mod_FormDistributor**/
+
+/* GLOBAL*/
+
+.clear{
+	clear:both;
+}
+
+
+.dist-error{
+	color: #ff0202;
+}
+
+.dist-success{
+	color:#26d803;
+}
+
+.dist-divider{
+	border-top: 1px solid #d9d9d9;
+}
+
+/* CSS */
+
+.distributor_form_container{
+	border: 1px solid #d9d9d9;	
+	background: #f7f7f7;
+}
+
+.distributor_form_container .disform--title{
+	padding: 10px;
+	background: #f1f1f1;
+	border-bottom: 1px dashed #d9d9d9;
+}
+
+.distributor_form_container .disform--title span{
+	font-size: 18px;
+	letter-spacing: .3px;
+	text-transform: uppercase;
+	color:#545353;
+}
+
+.distributor_form_container .distibutor-form{
+	padding: 30px 30px 30px 20px;
+}
+
+.distributor_form_container .distibutor-form form{
+	
+}
+
+.distributor_form_container .distibutor-form form .field {
+	margin: 0 0 15px 0;
+}
+
+.distributor_form_container .distibutor-form form .field p.details {
+	font-size: 13px;
+	color:#757474;
+}
+
+.distributor_form_container .distibutor-form form .field p span{
+	color:#013c7b;
+}
+
+.distributor_form_container .distibutor-form form .field label{
+	font-size: 13px;
+	color: #757474;
+}
+
+.distributor_form_container .distibutor-form form .field input{
+	width:100%;
+	margin: 10px 0 0;
+	padding: 10px 0px 10px 10px;
+	border-radius: 5px;
+	border: 1px solid #d9d9d9;
+	color: #757474;
+}
+
+.distributor_form_container .distibutor-form form .field input.dis-form-update{
+
+	text-align: right;
+	padding:10px;
+
+}
+
+.distributor_form_container .distibutor-form form  .form-column{
+	width: 45%;
+	float: left;
+	padding: 0 20px 0 0;
+}
+
+.dis-form-update{	
+	float: right;
+	padding:10px 30px;
+	text-transform: uppercase;
+	border:1px solid #000000;
+	font-size: 13px;
+	border-radius: 20px;
+	background: #013c7b;
+	color:#fff;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+.dis-form-update:hover{	
+	padding:10px 30px;
+	text-transform: uppercase;
+	border:1px solid #013c7b;
+	font-size: 13px;
+	border-radius: 20px;
+	background: #023060;
+	color:#fff;
+	letter-spacing: 1px;
+}

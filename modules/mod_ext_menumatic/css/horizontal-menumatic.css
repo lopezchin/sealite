@@ -1,0 +1,293 @@
+/*
+# ------------------------------------------------------------------------
+# Extensions for Joomla 2.5.x - Joomla 3.x
+# ------------------------------------------------------------------------
+# Copyright (C) 2011-2013 Ext-Joom.com. All Rights Reserved.
+# @license - PHP files are GNU/GPL V2.
+# Author: Ext-Joom.com
+# Websites:  http://www.ext-joom.com 
+# Date modified: 02/08/2012 - 12:00
+# ------------------------------------------------------------------------
+*/
+/* Based partially on Matthew Carroll's keyboard accessible flavor of Suckerfish 
+ * Dropdowns by Patrick Griffiths and Dan Webb. 
+ * http://carroll.org.uk/sandbox/suckerfish/bones2.html
+ */
+
+/* ----[ LINKS ]----*/
+
+/* all menu links */
+#extnav {
+   	height: 40px; /* remove this if not menumatic */
+   	margin: 0 10px!important;
+   	background-color: #383838;
+}
+
+#extnav li#item-101 a, #extnav li#item-130 a{
+	text-indent: -9999px;
+	background: url('../images/home.png') center no-repeat;
+}
+
+#extnav li#item-101 a:hover, #extnav li#item-130 a:hover{
+	background: url('../images/home.png') center no-repeat #004a8d;
+}
+
+#extnav, #extnav ul, #extnav ul li, #extnav ul li a{
+	z-index:999;
+}
+
+#extnav  > li.active > a{
+	background:#004a8d;
+	color:#FFF;
+}
+
+#extnav  > li.deeper {
+	position:relative;
+}
+
+#extnav  > li.deeper > a:before{
+	position: absolute;
+	content: '\f107';
+	font-size: 15px;
+	top: 11px;
+	right: 10px;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#extnav ul > li.deeper > a:before{
+	position: absolute;
+	content: '\f105';
+	font-size: 15px;
+	top: 7px;
+	right: 5px;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#extnav a, #subMenusContainer a{
+	text-decoration:none;
+	display:block;
+	padding:14px 30px 14px 20px;
+	color:#fff;
+	font-family: 'Lato', Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 100;
+	/*background-color:#fff ;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;*/
+}
+
+/* Just main menu links --[for non-javascript users this applies to submenu links as well]*/
+#extnav a{
+	margin:0;
+	float:left;	
+}
+
+/* Just sub menu links */
+#subMenusContainer a, #extnav li li a{
+	text-align:left;
+}
+
+/* All menu links on hover or focus */
+#extnav a:hover, #extnav a:focus, #subMenusContainer a:hover, #subMenusContainer a:focus, #extnav a.mainMenuParentBtnFocused, #subMenusContainer a.subMenuParentBtnFocused{
+	background:#004a8d;
+	color:#FFF;
+}
+
+/* sub menu links on hover or focus */
+#subMenusContainer a:hover, 
+#subMenusContainer a:focus, 
+#extnav a.mainMenuParentBtnFocused, 
+#subMenusContainer a.subMenuParentBtnFocused,
+#extnav li a:hover,
+#extnav li a:focus{
+	background-color:#004a8d;
+	color:#FFF;
+}
+
+/* Parent Sub Menu Links ---[javascript users only]*/
+.subMenuParentBtn{ 
+	background: url(../images/arrow_right.gif) right center no-repeat;  
+}
+
+/* Parent Sub Menu Links on hover or focus ---[javascript users only]*/
+.subMenuParentBtnFocused{ 
+	background: url(../images/arrow_right_over.gif) right center no-repeat;  
+}
+
+/* Parent Main Menu Links ---[javascript users only]*/
+.mainMenuParentBtn{	
+	 background: url(../images/arrow_down.gif) right center no-repeat; 
+}
+
+/* Parent Main Menu Links on hover or focus ---[javascript users only]*/
+.mainMenuParentBtnFocused{	
+	background: url(../images/arrow_down_over.gif) right center no-repeat; 
+}
+
+/* ----[ OLs ULs, LIs, and DIVs ]----*/
+
+/* Submenu Outer Wrapper - each submenu is inside a div with this class - javascript users only */
+.smOW{ 
+	display:none; 
+	position: absolute; 
+	/*overflow:hidden; */
+	/*the 2px left & right padding lets you have a 1px border 
+	  on the ul or ol inside since overflow is set to hidden*/
+	padding:0 2px;
+	margin:0 0 0 -2px;
+}
+
+
+/* All ULs and OLs */
+#extnav, #extnav ul, #extnav ol, #subMenusContainer ul, #subMenusContainer ol { 
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	line-height: 1em;
+}
+
+/* All submenu OLs and ULs */
+#extnav ol, #extnav ul, #subMenusContainer ul, #subMenusContainer ol {	
+	/*border around submenu goes here*/	 
+	/*-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;*/
+	background:#383838;	
+	/*border:1px solid #C3D46A;*/
+	left:0;
+}
+
+
+/* List items in main menu --[for non-javascript users this applies to submenus as well]  */
+
+#extnav li { 
+	/*great place to use a background image as a divider*/
+	display:block;
+	list-style:none;
+	position:relative;
+	float:left;
+}
+
+#extnav li:after { 
+	/*great place to use a background image as a divider*/
+	content: '';
+	top: 4px;
+	position: absolute;
+	display: inline-block;
+	width: 2px;
+	height: 56px;
+	background: url(../images/menu-border.png) no-repeat;
+}
+
+#extnav li li:after { 
+	/*great place to use a background image as a divider*/
+	display:none;
+
+}
+
+#subMenusContainer li{
+	list-style: none;
+}
+
+/* main menu ul or ol elment */
+#extnav{
+	display:block;
+	list-style:none;
+	margin:0 0 0 0;
+	z-index:5;
+/*	top:15px;*/
+/*	left:50%;*/
+	text-align: left;
+	display:block;
+	border: 1px solid #1c1c1c;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.05) 0 0 20px 4px inset, #585858 0 0 0 1px inset;
+	-moz-box-shadow: rgba(0, 0, 0, 0.05) 0 0 20px 4px inset, #585858 0 0 0 1px inset;
+	box-shadow: rgba(0, 0, 0, 0.05) 0 0 20px 4px inset, #585858 0 0 0 1px inset;
+	background: #383838;
+}
+
+#subMenusContainer{	display:block; 	position:absolute;	top:0;	left:0;	width:100%;	height:0;	overflow:visible;	z-index:1000000000; }
+
+/* --------------------------[ The below is just for non-javscript users ]--------------------------*/
+
+#extnav li{
+	width: auto;
+}
+
+
+#extnav li ul{
+	border-bottom:2px solid #000;
+}
+#extnav li li{	
+	float:none; 
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+}
+
+#extnav li li a{	
+	white-space: nowrap;
+	padding: 6px 30px 6px 20px;
+	line-height: 16px;	
+}
+
+#extnav li li ul{}
+
+#extnav li li li{	
+	float:none; 
+}
+
+#extnav li li li a{	
+	padding: 6px 30px 6px 20px;
+}
+
+#extnav li li a{ /* Just submenu links*/	
+	background:#383838;
+	position:relative;
+	float:none;
+	text-transform: uppercase;
+	font-size: 13px;
+}
+
+#extnav li ul { /* second-level lists */
+	position: absolute;
+	/*width: 11em;*/
+	margin-left: -1000em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+	/*margin-top: 2.5em;*/
+	margin-top: 3.1em;
+	-webkit-margin-top: 3.4em;
+	-moz-margin-top: 3.1em;
+}
+
+/* third-and-above-level lists */
+#extnav li ul ul { margin: -1em 0 0 -1000em; }
+#extnav li:hover ul ul {	margin-left: -1000em; }
+
+ /* lists nested under hovered list items */
+#extnav li:hover ul{	margin-left: 0; }
+#extnav li li:hover ul {
+	/*margin-left: 23.7em; */
+	margin-left: 100%; 
+	margin-top:-2.5em; 
+	-webkit-margin-left: 21.2em;
+	-moz-margin-top: -2.5em;
+}
+
+/* extra positioning rules for limited noscript keyboard accessibility */
+#extnav li a:focus + ul {  margin-left: 0; margin-top:2.2em; }
+#extnav li li a:focus + ul { left:0; margin-left: 1010em; margin-top:-2.2em;}
+#extnav li li a:focus {left:0;  margin-left:1000em; width:10em;  margin-top:0;}
+#extnav li li li a:focus {left:0; margin-left: 2010em; width: 10em;  margin-top:-1em;}
+#extnav li:hover a:focus{ margin-left: 0; }
+#extnav li li:hover a:focus + ul { margin-left: 10em; }

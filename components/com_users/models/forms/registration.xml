@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="default"
+		label="COM_USERS_REGISTRATION_DEFAULT_LABEL"
+	>
+
+		<field name="spacer" type="spacer" class="text"
+				label="COM_USERS_REGISTER_REQUIRED"
+			/>
+
+		<field name="name" type="text"
+			description="COM_USERS_REGISTER_NAME_DESC"
+			filter="string"
+			label="COM_USERS_REGISTER_NAME_LABEL"
+			message="COM_USERS_REGISTER_NAME_MESSAGE"
+			required="true"
+			size="30"
+		/>
+
+		<field name="email1" type="email"
+			description="COM_USERS_REGISTER_EMAIL1_DESC"
+			field="id"
+			filter="string"
+			label="COM_USERS_REGISTER_EMAIL1_LABEL"
+			message="COM_USERS_REGISTER_EMAIL1_MESSAGE"
+			required="true"
+			size="30"
+			unique="true"
+			validate="email"
+		/>
+
+		<field name="email2" type="email"
+			description="COM_USERS_REGISTER_EMAIL2_DESC"
+			field="email1"
+			filter="string"
+			label="COM_USERS_REGISTER_EMAIL2_LABEL"
+			message="COM_USERS_REGISTER_EMAIL2_MESSAGE"
+			required="true"
+			size="30"
+			validate="equals"
+		/>
+
+		<field name="address" type="text"
+			description="Please enter address"
+			label="Address"
+			filter="address"
+			message="Don't leave this field blank"
+			required="true"
+			size="30"
+		/>
+
+		<field name="company" type="text"
+			label="Company Name"
+			filter="company"
+			description="Please enter company name"
+			message="Don't leave company name blank"
+			required="true"
+			size="30"
+		/>
+
+		<field name="saleterritory" type="text"
+			label="Sale Territory"
+			filter="saleterritory"
+			description="Please enter sale territory"
+			message="Don't leave sale territory blank"
+			required="true"
+			size="30"
+		/>
+
+
+		<field name="phone" type="text"
+			label="Phone Number"
+			filter="phone"
+			description="Please enter phone number"			
+			message="Don't leave phone number blank"
+			required="true"
+			size="30"
+		/>
+
+
+		<field name="cellphone" type="text"
+			label="Cell Number"
+			filter="phone"
+			description="Please enter cell number"			
+			message="Don't leave cell number blank"
+			required="true"
+			size="30"
+		/>
+
+		<field name="fax" type="text"
+			label="Fax Number"
+			filter="fax"
+			description="Please enter fax number"
+			message="Don't leave fax number blank"
+			required="true"
+			size="30"
+		/>
+
+		<field name="username" type="text"
+			class="validate-username"
+			description="COM_USERS_DESIRED_USERNAME"
+			filter="username"
+			label="COM_USERS_REGISTER_USERNAME_LABEL"
+			message="COM_USERS_REGISTER_USERNAME_MESSAGE"
+			required="true"
+			size="30"
+			validate="username"
+		/>
+
+		<field name="password1" type="password"
+			autocomplete="off"
+			class="validate-password"
+			description="COM_USERS_DESIRED_PASSWORD"
+			field="password2"
+			filter="raw"
+			label="COM_USERS_REGISTER_PASSWORD1_LABEL"
+			message="COM_USERS_REGISTER_PASSWORD1_MESSAGE"
+			required="true"
+			size="30"
+			validate="equals"
+		/>
+
+		<field name="password2" type="password"
+			autocomplete="off"
+			class="validate-password"
+			description="COM_USERS_REGISTER_PASSWORD2_DESC"
+			filter="raw"
+			label="COM_USERS_REGISTER_PASSWORD2_LABEL"
+			message="COM_USERS_REGISTER_PASSWORD2_MESSAGE"
+			required="true"
+			size="30"
+		/>
+
+
+		<field name="image" type="media"
+			label="Select Image"
+			filter="image"
+			description="Upload a file"			
+			message="Upload a file"
+			directory="stories"
+		/>
+
+		<field
+			name="captcha"
+			type="captcha"
+			label="COM_USERS_CAPTCHA_LABEL"
+			description="COM_USERS_CAPTCHA_DESC"
+			validate="captcha"
+		/>
+	</fieldset>
+</form>

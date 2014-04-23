@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<extension type='module' version='2.5.0' method='upgrade'>
+	<name>Listing Page</name>
+	<author>John Wayne Jose</author>
+	<version>1.0.0</version>
+	<description>This is for listing page</description>
+	<files>
+		<filename>mod_listingpage.xml</filename>
+		<filename module='mod_listingpage'>mod_listingpage.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>css</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="category_id" type="input"
+			           label="Category" 
+			           description="Put the category id here!"
+			           default="0" class="inputbox">
+			    </field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<extension type='module' version='2.5.0' method='upgrade'>
+	<name>Secondary Menu</name>
+	<author>Archie Lopez</author>
+	<version>1.0.0</version>
+	<description>This is for secondary menu</description>
+	<files>
+		<filename>mod_secondarymenu.xml</filename>
+		<filename module='mod_secondarymenu'>mod_secondarymenu.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>css</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="menutype"
+					type="menu"
+					label="MOD_SECONDARY_MENU_LABEL"
+					description="MOD_SECONDARY_MENU_LABEL_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
