@@ -20,8 +20,16 @@ h1.latest-news{
 	border-bottom: 1px solid #cecece;
 }
 
-.latest-news--content h4 a{
+.latest-news--content h4.ln-result--anchor{
 	font-size: 14px;
+	font-weight: 300;
+	line-height:1.5em;
+	color: #414141;
+}
+
+
+.latest-news--content h4 a{
+	/*font-size: 14px;*/
 	font-weight: 300;
 	line-height:1.5em;
 	color: #414141;

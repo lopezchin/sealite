@@ -1461,7 +1461,7 @@ body.contentpane
 
 .footer-menu{
 	position:absolute;
-	top:15px;
+	top:8px;
 	right:10px;
 }
 
@@ -1475,6 +1475,7 @@ body.contentpane
 #footer a
 {
 	color:#fff;
+	font-size: 13px;
 }
 
 #bottom a img

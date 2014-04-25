@@ -11,7 +11,7 @@ $disID=$user->id;
 $db = JFactory::getDbo();
 $query = $db->getQuery(true);
 // Order it by the ordering field.
-$query->select($db->quoteName(array('id', 'company', 'name', 'saleterritory', 'address', 'phone', 'fax', 'cellphone', 'email', 'password')));
+$query->select($db->quoteName(array('id', 'company', 'name','username', 'saleterritory', 'address', 'phone', 'fax', 'cellphone', 'email', 'password')));
 $query->from($db->quoteName('#__users'));
 $query->where($db->quoteName('id') . ' LIKE '. $disID);
 // Reset the query using our newly populated query object.
@@ -21,7 +21,28 @@ $results = $db->loadObjectList();
 
 foreach ($results as $result);
 
+ // Get the global JAuthentication object
+  // jimport( 'joomla.user.authentication');
+  // $auth = JAuthentication::getInstance();
+
+  // $credentials = array( 'username' => $result->username, 'password' => $this->password );
+  // $options = array();
+  // $response = $auth->authenticate($credentials, $options);
+
+  // // success
+  // if ($response->status === JAUTHENTICATE_STATUS_SUCCESS) {
+  //   $response->status = true;
+  // } else {
+  // // failed
+  //   $response->status = false;
+  // }
+  // echo json_encode($response);
+
+//var_dump($response);
+
 ?>
+
+
 
 <div class="distributor_form_container">
 	<div class="disform--title">
@@ -86,7 +107,7 @@ foreach ($results as $result);
 			<div class="clear"></div>
 		</form><br>
 
-		<form name='dis-form' id='dis-form' class="dis-form2" method='POST'>			
+		<form name='dis-form' id='dis-form' class="dis-form2" method='POST'>		
 			<div class="field">
 				<div><label for='password'>New Password</label></div>
 				<div><input type='password' name='password' id='password' placeholder="Password" /></div>
@@ -97,7 +118,7 @@ foreach ($results as $result);
 			</div>
 			<div class="field">
 				<div></div>
-				<div><input type='hidden' name='dist_id' id='dist_id' value='<?php echo $result->id ; ?>'/></div>
+				<div><input type='hidden' name='dist_id' id='dist_id' value='<?php echo $result->id; ?>'/></div>
 			</div>
 			<div class="field">
 				<div class="dist-divider"></div>

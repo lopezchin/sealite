@@ -4,6 +4,8 @@ $doc=JFactory::getDocument();
 $doc->addStyleSheet(JURI::root().'/modules/mod_latestnews/css/mod_latestnews.css');
 $doc->addScript(JURI::root().'/modules/mod_latestnews/js/mod_latestnews.js');
 
+$user = JFactory::getUser();
+
 foreach ( $cat_news as $cat_result );
 
 ?>
@@ -17,8 +19,11 @@ foreach ( $cat_news as $cat_result );
 		<?php foreach ( $article_news as $art_result) { ?>
 		<div class='latest-news--content'>
 			<p class='lnews-date'><?php echo JText::sprintf(JHTML::_('date',$art_result->created, JText::_('DATE_FORMAT_LC2_DATE'))); ?></p>
-
-			<h4><a href="<?php echo $cat_result->path; ?>/<?php echo $art_result->id; ?>-<?php echo $art_result->alias;?>"><?php  echo $art_result->title; ?></a></h4>
+			<?php if(!$user->guest){ ?>
+				<h4><a href="<?php echo $cat_result->path; ?>/<?php echo $art_result->id; ?>-<?php echo $art_result->alias;?>"><?php  echo $art_result->title; ?></a></h4>
+			<?php }else{ ?>
+				<h4 class="ln-result--anchor"><?php  echo $art_result->title; ?></h4>
+			<?php } ?>
 		</div>
 		<?php } ?>
 

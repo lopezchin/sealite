@@ -69,7 +69,6 @@ if(isset($_POST['distributor_update'])){
 			require JModuleHelper::getLayoutPath('mod_distributor_form', $params->get('layout', 'update_password'));
 		}else{
 			
-
 			$object = new stdClass();
 
 			$object->id = $uptID;

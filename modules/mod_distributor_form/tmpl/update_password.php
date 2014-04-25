@@ -15,7 +15,7 @@ $disID=$user->id;
 
 	</div>
 	<div class="distibutor-form">
-		<form name='dis-form' id='dis-form' class="" method='POST'>			
+		<form name='dis-form' id='dis-form' class="" method='POST'>	
 			<div class="field">
 				<div><label for='password'>New Password</label></div>
 				<div><input type='password' name='password' id='password' placeholder="Password" /></div>

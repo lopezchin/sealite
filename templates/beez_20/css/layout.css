@@ -36,7 +36,7 @@ fieldset
 p
 {
         line-height:1.7em;
-        margin:8px 0;
+        margin: 8px 8px 0 0;
 }
 
 em
@@ -88,14 +88,14 @@ button{
 
 #header ul
 {
-        display:block;
+        /*display:block;*/
         margin:0px 0px 1px 0px;
         text-align:right;
         list-style-type:none;
-        padding:10px 0px 10px 0px;
-        position:absolute;
+        padding:10px 0px 0px 0px;
+        /*position:absolute;
         top:0;
-        right:0px;
+        right:0px;*/
 
 }
 
@@ -118,10 +118,19 @@ button{
 #header ul.menu li a:link,
 #header ul.menu li a:visited
 {
-        font-weight:bold;
-        text-decoration:none;
-        padding:0px 10px;
-        margin:0 ;
+    font-weight:normal;
+    /*text-decoration:none;*/
+    text-transform: none;
+    padding:0px 10px;
+    margin:0 ;
+    padding: 0 3px 0 25px;
+    color: #414141;
+    font-size: 13px;
+    font-size: 0.8125rem;
+    -webkit-transition: color 0.2s linear;
+    -moz-transition: color 0.2s linear;
+    -o-transition: color 0.2s linear;
+    transition: color 0.2s linear;
 }
 
 #header ul li a:hover,
@@ -309,7 +318,7 @@ h3.js_heading a
         list-style-type:none !important;
         margin:0 0 0px 0px ;
         /*padding: 0px 5px 20px 5px;*/
-        padding: 5px;
+        /*padding: 5px;*/
 
 }
 
@@ -2306,11 +2315,12 @@ div.feed {
   position: relative;
   clear: both;
   z-index: 998;
-  border: 1px solid #1c1c1c;
+  padding:0 0 25px;
+  /*border: 1px solid #1c1c1c;
   -webkit-box-shadow: #2d2d2d 0 0 20px 4px inset, #585858 0 0 0 1px inset;
   -moz-box-shadow: #2d2d2d 0 0 20px 4px inset, #585858 0 0 0 1px inset;
   box-shadow: #2d2d2d 0 0 20px 4px inset, #585858 0 0 0 1px inset;
-  background: #383838;
+  background: #383838;*/
 }
 .menu--main .nav {
   position: relative;
@@ -2339,10 +2349,12 @@ div.feed {
   color: #fff;
 }
 .menu--main .menu__item a:hover {
-  color: #c72e4b;
+  color: #000;
+  text-decoration: underline;
+  background: none;
 }
 .menu .menu--main .menu__item.is-active > a,.menu  .menu--main .menu__item.parent a:hover {
-  background-color: #c72e4b;
+  background-color: #fff;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 3px 10px 5px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 3px 10px 5px inset;
   box-shadow: rgba(0, 0, 0, 0.1) 0 3px 10px 5px inset;
@@ -2351,10 +2363,10 @@ div.feed {
 }
 
 .menu--main .menu__item, .menu--main ul > li:hover {
-    background-color: #c72e4b;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 3px 10px 5px inset;
+  background: transparent;
+  /*-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 3px 10px 5px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 3px 10px 5px inset;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 3px 10px 5px inset;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 3px 10px 5px inset;*/
   white-space: nowrap;
   color: #fff;
 }
