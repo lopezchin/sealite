@@ -25,8 +25,12 @@ $disID=$user->id;
 				<div><input type='password' name='confirmPassword' id='confirmPassword' placeholder="Confirm Password" /></div>
 			</div>
 			<div class="field">
+				<div><label for='verificatoin-code'>Verification Password</label></div>
+				<div><input type='text' name='verification' id='verification' placeholder="Verification Code" /></div>
+			</div>
+			<div class="field">
 				<div></div>
-				<div><input type='hidden' name='dist_id' id='dist_id' value='<?php echo $result->id ; ?>'/></div>
+				<div><input type='hidden' name='dist_id' id='dist_id' value='<?php echo $result->id; ?>'/></div>
 			</div>
 			<div class="field">
 				<div class="dist-divider"></div>

@@ -11,7 +11,7 @@ $disID=$user->id;
 $db = JFactory::getDbo();
 $query = $db->getQuery(true);
 // Order it by the ordering field.
-$query->select($db->quoteName(array('id', 'company', 'name','username', 'saleterritory', 'address', 'phone', 'fax', 'cellphone', 'email', 'password')));
+$query->select($db->quoteName(array('id', 'company', 'name','username', 'saleterritory', 'address', 'phone', 'fax', 'cellphone', 'email', 'password', 'sealite_code')));
 $query->from($db->quoteName('#__users'));
 $query->where($db->quoteName('id') . ' LIKE '. $disID);
 // Reset the query using our newly populated query object.
@@ -21,28 +21,15 @@ $results = $db->loadObjectList();
 
 foreach ($results as $result);
 
- // Get the global JAuthentication object
-  // jimport( 'joomla.user.authentication');
-  // $auth = JAuthentication::getInstance();
+$currentEmail = $result->email;
 
-  // $credentials = array( 'username' => $result->username, 'password' => $this->password );
-  // $options = array();
-  // $response = $auth->authenticate($credentials, $options);
+//auto generate sealite code
 
-  // // success
-  // if ($response->status === JAUTHENTICATE_STATUS_SUCCESS) {
-  //   $response->status = true;
-  // } else {
-  // // failed
-  //   $response->status = false;
-  // }
-  // echo json_encode($response);
+$sealite_code = $result->sealite_code;
 
-//var_dump($response);
+$sealiteCode = substr( md5(rand()), 0, 10);
 
 ?>
-
-
 
 <div class="distributor_form_container">
 	<div class="disform--title">
@@ -84,6 +71,15 @@ foreach ($results as $result);
 				<div><label for='email'>Email</label></div>
 				<div><input type='text' name='email' id='email' value='<?php echo $result->email; ?>'/></div>
 			</div>
+
+			<?php if($sealite_code==''){ ?>
+				<div class="field">
+					<div><label for='Verification key'>Sealite Code</label></div>
+					<div><input type='text' name='key_code' id='key_code' value='<?php echo $sealiteCode; ?>' disabled/></div>
+					<div><input type='hidden' name='key' id='key' value='<?php echo $sealiteCode; ?>'/></div>
+				</div>
+			<?php }else{ } ?>
+				
 			<div class="clear"></div>
 			<div class="field">
 				<p class="details">
@@ -117,6 +113,10 @@ foreach ($results as $result);
 				<div><input type='password' name='confirmPassword' id='confirmPassword' placeholder="Confirm Password" /></div>
 			</div>
 			<div class="field">
+				<div><label for='verificatoin-code'>Confirm Password</label></div>
+				<div><input type='text' name='verification' id='verification' placeholder="Verification Code" /></div>
+			</div>
+			<div class="field">
 				<div></div>
 				<div><input type='hidden' name='dist_id' id='dist_id' value='<?php echo $result->id; ?>'/></div>
 			</div>
@@ -125,6 +125,7 @@ foreach ($results as $result);
 			</div>
 			
 			<div>
+				<input type='hidden' name='currentEmail' id='currentEmail' value="<?php echo $currentEmail; ?>" />
 				<input type='submit' id='dis-form-update' class='dis-form-update' name='update_password' value='Update Password' />
 			</div>
 			<div class="clear"></div>
