@@ -54,6 +54,7 @@ if(isset($_POST['distributor_update'])){
 
 				// Create an object for the record we are going to update.
 				echo "<div class='dist-success'>Distributor successfully updated</div>";
+				require( JModuleHelper::getLayoutPath( 'mod_distributor_form' ) );
 				
 			}
 
@@ -110,6 +111,7 @@ if(isset($_POST['distributor_update'])){
 
 				// Create an object for the record we are going to update.
 				echo "<div class='dist-success'>Distributor successfully updated. We also send you a sealite verification code for your security purpose.</div>";
+				require( JModuleHelper::getLayoutPath( 'mod_distributor_form' ) );
 			}
 	}
 
@@ -172,7 +174,7 @@ if(isset($_POST['distributor_update'])){
 				//send email to the current user logged after changing password
 				$to      = $currentEmail;
 				$subject = 'Sealite Changed Password';
-				$message = 	'Your password changed to ('.$password.').'."\n".'If not you please check your account to avoid account hack.'."\n\n".'Kind regards,'."\n".'Sealite Team';
+				$message = 	'Your password changed to ('.$password.').'."\n".'If not you? Please check your account to avoid account hack.'."\n\n".'Kind regards,'."\n".'Sealite Team';
 				$headers = 'From: Administrator'."\r\n".
 				    'Reply-To: sealite@administrator.com'. "\r\n" . // change this if neccessarily 
 				    'X-Mailer: PHP/' . phpversion();
@@ -180,16 +182,54 @@ if(isset($_POST['distributor_update'])){
 				mail($to, $subject, $message, $headers);
 
 				echo "<div class='dist-success'>Password successfully updated. Please check your email for more info.</div>";
+				require JModuleHelper::getLayoutPath('mod_distributor_form', $params->get('layout', 'update_password'));
 			}
 		}else{
 		 	echo "<div class='dist-error'>Your password does not match. Please Try Again</div>";		
 		 	require JModuleHelper::getLayoutPath('mod_distributor_form', $params->get('layout', 'update_password'));
+
 		}
 
 	}else{
 		echo "<div class='dist-error'>Invalid Verification Code</div>";		
 		require JModuleHelper::getLayoutPath('mod_distributor_form', $params->get('layout', 'update_password'));
 	}
+}else if(isset($_POST['resend_verification'])){	
+	$user = JFactory::getUser();
+	
+	$uptID = $jinput->get('dist_id','','RAW');
+
+	$db = JFactory::getDbo();
+	$query = $db->getQuery(true);
+	// Order it by the ordering field.
+	$query->select($db->quoteName(array('id', 'company', 'name','username', 'saleterritory', 'address', 'phone', 'fax', 'cellphone', 'email', 'password', 'sealite_code')));
+	$query->from($db->quoteName('#__users'));
+	$query->where($db->quoteName('id') . ' LIKE '. $uptID);
+	// Reset the query using our newly populated query object.
+	$db->setQuery($query);
+	// Load the results as a list of stdClass objects (see later for more options on retrieving data).
+	$results = $db->loadObjectList();
+
+	foreach ($results as $result);
+
+	$sealite_code = $result->sealite_code;
+	$email=$result->email;
+
+	$to      = $email;
+	$subject = 'Sealite Verification Code';
+	$message = 	'Your sealite verification code is ( '.$sealite_code.' )'
+				."\n\n".'Kind regards,'."\n".'Sealite Team';
+	$headers = 'From: Administrator'."\r\n".
+	    'Reply-To: sealite@administrator.com'. "\r\n" . // change this if neccessarily 
+	    'X-Mailer: PHP/' . phpversion();
+
+	mail($to, $subject, $message, $headers);
+
+	// Create an object for the record we are going to update.
+	echo "<div class='dist-success'>You're verification delivered to ".$email.".</div>";
+	require( JModuleHelper::getLayoutPath( 'mod_distributor_form' ) );	
+
+	
 }else{	
 	$hello = modDistributorFormHelper::getTitle( $params );
 	require( JModuleHelper::getLayoutPath( 'mod_distributor_form' ) );

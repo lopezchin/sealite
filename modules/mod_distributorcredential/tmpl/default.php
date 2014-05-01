@@ -11,7 +11,7 @@ $disID=$user->id;
 $db = JFactory::getDbo();
 $query = $db->getQuery(true);
 // Order it by the ordering field.
-$query->select($db->quoteName(array('id', 'company', 'name', 'saleterritory', 'address', 'phone', 'fax', 'cellphone', 'email')));
+$query->select($db->quoteName(array('id', 'company', 'name', 'saleterritory', 'address', 'phone', 'fax', 'cellphone', 'email', 'image')));
 $query->from($db->quoteName('#__users'));
 $query->where($db->quoteName('id') . ' LIKE '. $disID);
 // Reset the query using our newly populated query object.
@@ -21,6 +21,14 @@ $results = $db->loadObjectList();
 
 foreach ($results as $result);
 
+$image = $result->image;
+
+if($image!='' && $image!=null){
+	$image = $result->image;
+}else{
+	$image = 'modules/mod_distributorcredential/images/profile-icon.png';
+}
+
 ?>	
 
 <div class="discres-container">
@@ -29,7 +37,7 @@ foreach ($results as $result);
 	</div>
 	<div class="dscres-detail--cont">
 		<div class="image-detail dis-left">
-			<img src="<?php echo !$user->guest ? $user->image : 'Sealite guest'; ?>" width="160" height="160">
+			<img src="<?php echo $image; ?>" width="160" height="160">
 		</div>
 
 		<div class="detail-1st dis-left">										

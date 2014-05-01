@@ -85,19 +85,4 @@ foreach ( $cat_news as $cat_result );
 		 		});
 	 		});
 	});
- 		
- //    $('#sendEmail').click(function(){
-
- //    	var user_name = $('#user_name').val();
- //    	var user_email = $('#user_email').val();
-
- 		// alert(user_name+"/"+user_email);
-
-    // var link = 'mailto:philweb.seniorprogrammer05@gmail.com?subject=Message from '
-    //          +document.getElementById('user_name').value
-    //          +'&body='+document.getElementById('user_email').value;
-	    // window.location.href = link;
-	// });
-
-
 </script>

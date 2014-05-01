@@ -9,23 +9,24 @@ $user = JFactory::getUser();
 foreach ( $cat_news as $cat_result );
 
 ?>
-
-<h1 class="latest-news">Latest News</h1>
-<div class="latest-divider"> </div>
-<?php //echo $cat_result->alias; ?>
-<div class="lnews-container" id ="marqueecontainer" >
-	<div class="lnews-content" id="vmarquee" onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed">                 
-                           
-		<?php foreach ( $article_news as $art_result) { ?>
-		<div class='latest-news--content'>
-			<p class='lnews-date'><?php echo JText::sprintf(JHTML::_('date',$art_result->created, JText::_('DATE_FORMAT_LC2_DATE'))); ?></p>
-			<?php if(!$user->guest){ ?>
-				<h4><a href="<?php echo $cat_result->path; ?>/<?php echo $art_result->id; ?>-<?php echo $art_result->alias;?>"><?php  echo $art_result->title; ?></a></h4>
-			<?php }else{ ?>
-				<h4 class="ln-result--anchor"><?php  echo $art_result->title; ?></h4>
+<div class="l-news--container">
+	<h1 class="latest-news">Latest News</h1>
+	<div class="latest-divider"> </div>
+	<?php //echo $cat_result->alias; ?>
+	<div class="lnews-container" id ="marqueecontainer" >
+		<div class="lnews-content" id="vmarquee" onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed">                 
+	                           
+			<?php foreach ( $article_news as $art_result) { ?>
+			<div class='latest-news--content'>
+				<p class='lnews-date'><?php echo JText::sprintf(JHTML::_('date',$art_result->created, JText::_('DATE_FORMAT_LC2_DATE'))); ?></p>
+				<?php if(!$user->guest){ ?>
+					<h4><a href="<?php echo $cat_result->path; ?>/<?php echo $art_result->id; ?>-<?php echo $art_result->alias;?>"><?php  echo $art_result->title; ?></a></h4>
+				<?php }else{ ?>
+					<h4 class="ln-result--anchor"><?php  echo $art_result->title; ?></h4>
+				<?php } ?>
+			</div>
 			<?php } ?>
-		</div>
-		<?php } ?>
 
- 	</div>              
-</div> 
+	 	</div>              
+	</div> 
+</div>

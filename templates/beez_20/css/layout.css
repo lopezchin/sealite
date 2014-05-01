@@ -84,7 +84,7 @@ button{
 
 
 #header form .inputbox { margin: 2px 0px 2px 2px;}
-#header form .inputbox:focus { margin: 1px 11px 0 1px; }
+#header form .inputbox:focus { /*margin: 1px 11px 0 1px;*/ }
 
 #header ul
 {

@@ -32,11 +32,17 @@ $sealiteCode = substr( md5(rand()), 0, 10);
 ?>
 
 <div class="distributor_form_container">
-	<div class="disform--title">
-		<span class="dis-form">Edit Details</span>
-		<span class="dis-form2">Change Password</span>
-
-	</div>
+	<?php if($sealite_code!='' && $sealite_code!=null){ ?>
+		<div class="disform--title">
+			<span class="dis-form">Edit Details</span>
+			<span class="dis-form2">Change Password</span>
+		</div>
+	<?php }else{ ?>
+		<div class="disform--title">
+			<span class="dis-form update">Update First to have the verification code.</span>
+			<span class="dis-form2 update">Update First to have the verification code.</span>
+		</div>
+	<?php } ?>
 	<div class="distibutor-form">
 		<form name='dis-form' id='dis-form' class="dis-form" method='POST'>
 			<div class="field">
@@ -113,7 +119,7 @@ $sealiteCode = substr( md5(rand()), 0, 10);
 				<div><input type='password' name='confirmPassword' id='confirmPassword' placeholder="Confirm Password" /></div>
 			</div>
 			<div class="field">
-				<div><label for='verificatoin-code'>Confirm Password</label></div>
+				<div><label for='verificatoin-code'>Verification Code</label></div>
 				<div><input type='text' name='verification' id='verification' placeholder="Verification Code" /></div>
 			</div>
 			<div class="field">
@@ -124,15 +130,30 @@ $sealiteCode = substr( md5(rand()), 0, 10);
 				<div class="dist-divider"></div>
 			</div>
 			
-			<div>
-				<input type='hidden' name='currentEmail' id='currentEmail' value="<?php echo $currentEmail; ?>" />
-				<input type='submit' id='dis-form-update' class='dis-form-update' name='update_password' value='Update Password' />
+
+			<?php if($sealite_code!='' && $sealite_code!=null){ ?>
+				<div>
+					<input type='hidden' name='currentEmail' id='currentEmail' value="<?php echo $currentEmail; ?>" />
+					<input type='submit' id='dis-form-update' class='dis-form-update resend_verification' name='resend_verification' value='Resend Verification'/>
+					<input type='submit' id='dis-form-update' class='dis-form-update' name='update_password' value='Update Password'/>
+				</div>
+			<?php }else{ ?>
+				<div class="field">
+				<div><label>Need to update first.</label></div>
 			</div>
+			<?php } ?>
 			<div class="clear"></div>
 		</form>
 		
 	</div>
 
-
-	
 </div>
+
+<!-- error and sucess fadeout after delayed second -->
+<script type="text/javascript">
+	//$( "div.dist-error" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
+	$( document ).ready(function() {
+	    $("div.dist-error").delay(4000).fadeOut("slow");
+	    $("div.dist-success").delay(4000).fadeOut("slow");
+	});
+</script>

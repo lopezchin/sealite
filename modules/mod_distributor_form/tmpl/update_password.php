@@ -44,6 +44,12 @@ $disID=$user->id;
 		
 	</div>
 
-
-	
 </div>
+
+
+<script type="text/javascript">
+	//$( "div.dist-error" ).slideUp( 300 ).delay( 800 ).fadeIn( 400 );
+	$( document ).ready(function() {
+	    $("div.dist-error").delay(4000).fadeOut("slow");
+	});
+</script>

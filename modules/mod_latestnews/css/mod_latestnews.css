@@ -1,5 +1,9 @@
 /** mod_latestnews **/
 
+.l-news--container{
+	margin: -7px -0 0;
+}
+
 h1.latest-news{
 	font-size: 1.4em;
 	color:#000;

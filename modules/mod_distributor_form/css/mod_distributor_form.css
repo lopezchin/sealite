@@ -8,11 +8,21 @@
 
 
 .dist-error{
+	padding: 10px;
+	margin: 0 0 10px;
 	color: #ff0202;
+	border: 1px solid #cecece;
+	background: #f1f1f1;
+	font-size: 15px;
 }
 
-.dist-success{
-	color:#26d803;
+.dist-success{	
+	padding: 10px;
+	margin: 0 0 10px;
+	color: #26d803;
+	border: 1px solid #cecece;
+	background: #f1f1f1;
+	font-size: 15px;
 }
 
 .dist-divider{
@@ -38,6 +48,13 @@
 	letter-spacing: .3px;
 	text-transform: uppercase;
 	color:#545353;
+}
+
+.distributor_form_container .disform--title .update{
+	font-size: 18px;
+	letter-spacing: .3px;
+	text-transform: uppercase;
+	color:#f90b0f;
 }
 
 .distributor_form_container .distibutor-form{
@@ -110,4 +127,8 @@
 	background: #023060;
 	color:#fff;
 	letter-spacing: 1px;
+}
+
+.resend_verification{
+	float: left!important;
 }

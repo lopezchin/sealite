@@ -49,15 +49,6 @@ if (isset($_POST['action']) ) {
 
 	mail($to, $subject, $message, $headers);
 
-	// fetch data from the database, intended for its image
-
-	// if found then continue,
-
-		// fetch the information required for the email body and header
-
-		// send email via joomla
-
-	// else do nothing
 
 	die(); return "";
 }
