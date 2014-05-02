@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<extension type='module' version='2.5.0' method='upgrade'>
+	<name>Latest News Listing</name>
+	<author>Archie Lopez</author>
+	<version>1.0.0</version>
+	<description>This is for the latest news listing</description>
+	<files>
+		<filename>mod_latestnews_listing.xml</filename>
+		<filename module='mod_latestnews_listing'>mod_latestnews_listing.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>css</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="category_id" type="input"
+			           label="Category" 
+			           description="Put the category id here!"
+			           default="0" class="inputbox"
+			            >
+			    </field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -296,3 +296,12 @@
 
 
 /* sample */
+
+#extnav ul li#item-224 ul {
+	display: none;
+}
+
+
+#extnav ul li#item-224 a:before {
+	display: none;
+}

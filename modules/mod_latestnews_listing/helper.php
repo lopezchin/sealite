@@ -11,7 +11,7 @@
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
  */
-class modLatestNewsHelper
+class modLatestNewsListingHelper
 {
     /**
      * Retrieves the hello message
