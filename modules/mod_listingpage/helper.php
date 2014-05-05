@@ -11,6 +11,8 @@
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses.
  */
+
+
 class modListingPage
 {
     /**
@@ -19,15 +21,23 @@ class modListingPage
      * @param array $params An object containing the module parameters
      * @access public
      */    
-    public static function fetchCategoryId( $params ){
-        $cat_id = $params->get('category_id');
 
+    public static function fetchCategoryId( $params ){
+        $cat_id = $params->get('catid',array());
+
+        //use this foreach condition for getting the value of xml field check at .xml file of this module
+        foreach($cat_id as $ids) {
+            $id = $ids;
+        }
+        
+        // var_dump($id);
+        
         // Get a db connection. 
         $db = JFactory::getDbo();
         $query = $db->getQuery(true);
         $query->select($db->quoteName(array('id', 'title', 'alias', 'published', 'path')));
         $query->from($db->quoteName('#__categories'));
-        $query->where($db->quoteName('id') . ' LIKE '. $cat_id);
+        $query->where($db->quoteName('id') . ' = '. $id);
         $db->setQuery($query);
 
         $cat_news = $db->loadObjectList();
@@ -38,14 +48,20 @@ class modListingPage
 
     public static function getlistategory( $params ){
 
-        $cat_id = $params->get('category_id');
+        $cat_id = $params->get('catid',array());
+
+
+        foreach($cat_id as $ids) {
+            $id = $ids;
+        }
+
         $db = JFactory::getDbo();
         
         $query = $db->getQuery(true);
         
         $query->select($db->quoteName(array('id', 'title', 'alias', 'catid', 'images', 'created', 'state', 'introtext')));
         $query->from($db->quoteName('#__content'));
-        $query->where($db->quoteName('catid') . ' LIKE '. $cat_id);
+        $query->where($db->quoteName('catid') . ' = '. $id);
         $query->order('ordering ASC');
         
         $db->setQuery($query);

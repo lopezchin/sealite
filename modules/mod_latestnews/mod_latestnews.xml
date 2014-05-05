@@ -1,9 +1,9 @@
 <?xml version='1.0'?>
 <extension type='module' version='2.5.0' method='upgrade'>
-	<name>Latest News</name>
-	<author>Archie Lopez</author>
+	<name>Latest News Event</name>
+	<author>Mark Diaz Philwebservices</author>
 	<version>1.0.0</version>
-	<description>This is for the single title</description>
+	<description>This is for the listing page event</description>
 	<files>
 		<filename>mod_latestnews.xml</filename>
 		<filename module='mod_latestnews'>mod_latestnews.php</filename>
@@ -17,12 +17,17 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field name="category_id" type="input"
-			           label="Category" 
-			           description="Put the category id here!"
-			           default="0" class="inputbox"
-			            >
-			    </field>
+				<field
+					name="catid"
+					type="category"
+					extension="com_content"
+					multiple="true"
+					default=""
+					size="10"
+					label="JCATEGORY"
+					description="MOD_ARTICLES_NEWS_FIELD_CATEGORY_DESC" >
+					<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
 			</fieldset>
 		</fields>
 	</config>

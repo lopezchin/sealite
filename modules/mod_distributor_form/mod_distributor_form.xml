@@ -1,7 +1,7 @@
 <?xml version='1.0'?>
 <extension type='module' version='2.5.0' method='upgrade'>
 	<name>Distributor Form</name>
-	<author>John Wayne Jose</author>
+	<author>Mark Diaz Philwebservices</author>
 	<version>1.0.0</version>
 	<description>This is for the single title</description>
 	<files>

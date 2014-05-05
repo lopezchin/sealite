@@ -11,7 +11,7 @@ $app = JFactory::getApplication();
 
 $menu_id = $app->getMenu()->getActive()->id;
 
- $db = JFactory::getDbo();
+$db = JFactory::getDbo();
 $query = $db->getQuery(true);
 $query->select($db->quoteName(array('id', 'title', 'alias', 'published', 'path')));
 $query->from($db->quoteName('#__menu'));

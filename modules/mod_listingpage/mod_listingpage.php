@@ -15,6 +15,8 @@
 // no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
+
+
 if (isset($_POST['action']) ) {
 	// Mail command
 
@@ -56,7 +58,7 @@ if (isset($_POST['action']) ) {
 // Include the syndicate functions only once
 require_once( dirname(__FILE__).DS.'helper.php' );
  
-// $hello = modLatestNewsHelper::getTitle( $params );
+// $hello = modListingPage::getcatID( $params );
 
 $article_news = modListingPage::getlistategory( $params );
 $cat_news = modListingPage::fetchCategoryId( $params );
