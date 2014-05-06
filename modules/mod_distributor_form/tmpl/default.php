@@ -11,7 +11,7 @@ $disID=$user->id;
 $db = JFactory::getDbo();
 $query = $db->getQuery(true);
 // Order it by the ordering field.
-$query->select($db->quoteName(array('id', 'company', 'name','username', 'saleterritory', 'address', 'phone', 'fax', 'cellphone', 'email', 'password', 'sealite_code')));
+$query->select($db->quoteName(array('id', 'company', 'name','username', 'saleterritory', 'address', 'phone', 'fax', 'cellphone', 'email', 'password', 'sealite_code', 'image')));
 $query->from($db->quoteName('#__users'));
 $query->where($db->quoteName('id') . ' LIKE '. $disID);
 // Reset the query using our newly populated query object.
@@ -29,6 +29,14 @@ $sealite_code = $result->sealite_code;
 
 $sealiteCode = substr( md5(rand()), 0, 10);
 
+$image = $result->image;
+
+if($image!='' && $image!=null){
+	$image = 'images/user-avatar/'.$result->image;
+}else{
+	$image = 'modules/mod_distributorcredential/images/profile-icon.png';
+} 
+
 ?>
 
 <div class="distributor_form_container">
@@ -36,13 +44,19 @@ $sealiteCode = substr( md5(rand()), 0, 10);
 		<div class="disform--title">
 			<span class="dis-form">Edit Details</span>
 			<span class="dis-form2">Change Password</span>
+			<span class="dis-form3">Update Avatar</span>
 		</div>
 	<?php }else{ ?>
 		<div class="disform--title">
 			<span class="dis-form update">Update First to have the verification code.</span>
 			<span class="dis-form2 update">Update First to have the verification code.</span>
+			<span class="dis-form3 update">Update First to have the verification code.</span>
+
 		</div>
 	<?php } ?>
+
+<!-- Update user detail -->
+
 	<div class="distibutor-form">
 		<form name='dis-form' id='dis-form' class="dis-form" method='POST'>
 			<div class="field">
@@ -109,6 +123,10 @@ $sealiteCode = substr( md5(rand()), 0, 10);
 			<div class="clear"></div>
 		</form><br>
 
+<!-- End Update user detail -->
+
+<!-- changing password here -->
+
 		<form name='dis-form' id='dis-form' class="dis-form2" method='POST'>		
 			<div class="field">
 				<div><label for='password'>New Password</label></div>
@@ -144,7 +162,31 @@ $sealiteCode = substr( md5(rand()), 0, 10);
 			<?php } ?>
 			<div class="clear"></div>
 		</form>
+
+<!-- End changing password here -->
 		
+
+<!-- uploading image -->
+
+		<form name='dis-form' id='dis-form' class="dis-form3" method='POST' enctype="multipart/form-data">		
+
+			<div class="preview_image">
+				<img src="<?php echo $image; ?>" width="160" height="160">
+			</div>
+
+			<label for="file">Filename:</label>
+			<input type="file" name="file" id="file">
+			<input type='hidden' name='dist_id' id='dist_id' value='<?php echo $result->id; ?>'/><br>
+			<div class="field">
+				<div class="dist-divider"></div>
+			</div>
+			<input type="submit" class='dis-form-update' name="update_image" value="Update Image">
+
+			<div class="clear"></div>
+		</form>
+
+<!-- End uploading image -->
+
 	</div>
 
 </div>

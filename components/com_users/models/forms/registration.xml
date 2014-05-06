@@ -132,13 +132,13 @@
 		/>
 
 
-		<field name="image" type="media"
+		<!-- <field name="image" type="media"
 			label="Select Image"
 			filter="image"
 			description="Upload a file"			
 			message="Upload a file"
 			directory="stories"
-		/>
+		/> -->
 
 		<field
 			name="captcha"

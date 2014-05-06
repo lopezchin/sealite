@@ -37,7 +37,8 @@ $disID=$user->id;
 			</div>
 			
 			<div>
-				<input type='submit' id='dis-form-update' class='dis-form-update' name='update_password' value='Update Password' />
+				<input type='submit' id='dis-form-update' class='dis-form-update resend_verification' name='resend_verification' value='Resend Verification'/>
+				<input type='submit' id='dis-form-update' class='dis-form-update' name='update_password' value='Update Password'/>
 			</div>
 			<div class="clear"></div>
 		</form>
