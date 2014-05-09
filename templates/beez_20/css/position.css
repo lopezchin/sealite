@@ -399,7 +399,8 @@ h1#logo
 
 .box2
 {
-        width:32%
+        /*width:32%;*/
+        width:37%
 }
 
 .box3
@@ -416,4 +417,94 @@ h1#logo
 }
 
 img { border: 0 none; }
+
+
+
+
+/* registration */
+
+
+
+.clear{
+    clear:both;
+}
+
+
+.remind, .reset, .user-login{
+    width: 970px;
+    margin: 10px auto;
+    padding: 30px;
+    /*background: #000;*/
+    border: 1px solid #cecece;
+    border-radius: 10px;
+}
+
+.user-login .logo{
+    text-align: left;
+    padding: 0 0 20px;
+}
+
+.user-login .ul-detail{
+    padding: 15px 0;
+    border-top:1px solid #0d87c8;
+    border-bottom: 1px solid #0d87c8;
+}
+
+.user-login .ul-detail p{
+    font-size: 14px;
+    text-align: left;
+}
+.user-login .ul-detail p a{
+    color: #0d87c8;
+}
+.user-login .ul-detail p a:hover{
+    background: none;
+}
+
+.account-login{
+    padding: 20px 0;
+}
+
+.account-login .al-title{
+    font-size: 12pt;
+    color: #0d87c8;
+    text-align: left;
+}
+
+.account-login #login-form{
+    text-align: left;
+}
+
+.account-login #login-form input.button{
+     padding: 8px 25px;
+    background: #0d87c8;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.account-login #login-form input.button:hover{
+    padding: 8px 25px;
+    background: #fff;
+    border: 1px solid #0d87c8;
+    border-radius: 10px;
+    color: #0d87c8;
+}
+
+.account-login #login-form ul{
+    padding: 0;
+}
+
+.account-login #login-form ul li{
+    list-style: none;
+}
+
+.account-login #login-form ul li a{
+    
+}
+
+.account-login #login-form ul li a:hover{
+    background: none;
+    text-decoration: underline;
+}
+
 

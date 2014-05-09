@@ -24,7 +24,6 @@ class ContentControllerArticles extends JControllerAdmin
 	 * Constructor.
 	 *
 	 * @param	array	$config	An optional associative array of configuration settings.
-
 	 * @return	ContentControllerArticles
 	 * @see		JController
 	 * @since	1.6

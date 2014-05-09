@@ -89,6 +89,11 @@ $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/amenu.
 <link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/ie7only.css" rel="stylesheet" type="text/css" />
 <![endif]-->
 
+<!--[if IE 9]>
+<link href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/ie9only.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+ 	
+
 <script type="text/javascript">
 
 	var big ='<?php echo (int)$this->params->get('wrapperLarge');?>%';
@@ -175,6 +180,28 @@ $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/amenu.
                                             		<jdoc:include type="message" />
                                                     <jdoc:include type="component" />	                                                    
                                             		<jdoc:include type="modules" name="center-position" />
+
+                                            		<?php if ($this->countModules('cred-reg-sign')): ?>
+                                            			
+	                                            		<div class="user-login">
+															<!-- <div class="logo" >
+																<?php if ($logo): ?>
+														       	 <img src="<?php echo $this->baseurl ?>/<?php echo htmlspecialchars($logo); ?>"  alt="<?php echo htmlspecialchars($templateparams->get('sitetitle'));?>" />
+														        <?php endif;?>
+													        </div> -->
+													        <div class="ul-detail">
+													        	<p>Welcome to the Carmanah Partner Portal. To access the portal, please login below.</p>
+													        	<p><b>If you have lost your access password or are unable to login, please use the "Forgot Password" link.</b> 
+													        		If that does not solve the problem please contact our <a href="mailto:sealite@admin.com">Customer Service Team.</a></p>
+													        </div>
+													        <div class="account-login">
+													         	<div class="al-title">Account Login</div>													         	
+															 	<jdoc:include type="modules" name="cred-reg-sign" />
+															 	<jdoc:include type="message" />												                
+															</div>
+															 <div class="clear"></div>
+														</div>
+													<?php endif; ?>
 														
 	                                            </div><!-- end main -->
 

@@ -298,10 +298,14 @@
 /* sample */
 
 #extnav ul li#item-224 ul {
-	display: none;
+    display: none;
 }
-
 
 #extnav ul li#item-224 a:before {
-	display: none;
+    display: none;
 }
+
+li#item-238 {
+    display: none;
+}
+
