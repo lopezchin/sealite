@@ -26,8 +26,12 @@ class modListingPage
         $cat_id = $params->get('catid',array());
 
         //use this foreach condition for getting the value of xml field check at .xml file of this module
-        foreach($cat_id as $ids) {
-            $id = $ids;
+        if($cat_id==null){
+            $cat_id=null;
+        }else{
+            foreach($cat_id as $ids) {
+                $id = $ids;
+            }
         }
         
         // var_dump($id);
@@ -51,8 +55,12 @@ class modListingPage
         $cat_id = $params->get('catid',array());
 
 
-        foreach($cat_id as $ids) {
-            $id = $ids;
+        if($cat_id==null){
+            $cat_id=null;
+        }else{
+            foreach($cat_id as $ids) {
+                $id = $ids;
+            }
         }
 
         $db = JFactory::getDbo();

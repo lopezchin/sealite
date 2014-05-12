@@ -17,11 +17,17 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-				<field name="category_id" type="input"
-			           label="Category" 
-			           description="Put the category id here!"
-			           default="0" class="inputbox">
-			    </field>
+			    <field
+					name="catid"
+					type="category"
+					extension="com_content"
+					multiple="true"
+					default=""
+					size="10"
+					label="JCATEGORY"
+					description="MOD_ARTICLES_NEWS_FIELD_CATEGORY_DESC" >
+					<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
 			</fieldset>
 		</fields>
 	</config>

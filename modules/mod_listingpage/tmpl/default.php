@@ -2,6 +2,7 @@
 defined( '_JEXEC' ) or die( 'Restricted access' ); 
 $doc=JFactory::getDocument();
 $doc->addStyleSheet(JURI::root().'/modules/mod_listingpage/css/mod_listingpage.css');
+$doc->addScript(JURI::root().'/modules/mod_listingpage/js/tooltip.js');
 $app = JFactory::getApplication();
 
 $menu = $app->getMenu()->getActive();
@@ -25,9 +26,27 @@ $current_user = $user->id;
 						$images = json_decode($art_result->images); 					
 						$imageUrl = htmlspecialchars($images->image_intro);
 						$imgName = htmlspecialchars($images->image_intro_alt);
-						$imgSize = filesize(htmlspecialchars($images->image_intro));
-						$totalSize = ($imgSize/1048576)*1000; //mega
+
+						//use this to get the image size
+						// $imgSize = filesize(htmlspecialchars($images->image_intro));
+						// $totalSize = ($imgSize/1048576)*1000; //mega
 						//$totalSize = ($imgSize/1024)*1000; //kilo
+
+						// if($totalSize == 0){
+						// 	$totalFileSize = 0; 
+						// }else{
+						// 	$totalFileSize =  round($totalSize, 2);
+						// }
+
+						$ext = substr($imageUrl, strrpos($imageUrl, '.') + 1);
+
+						$extensions = array("pdf","PDF");
+
+						// if (!in_array($ext, $extensions)) {
+						//        echo "$ext is an invalid file format" ;
+						// }else{
+						// 	echo "$ext is a valid format";
+						// }
 
 						if($imageUrl == null || $imageUrl == ''){
 							$cValue = 'no-img';
@@ -37,12 +56,7 @@ $current_user = $user->id;
 							$none = "";
 						}
 						
-						if($totalSize == 0){
-							$totalFileSize = 0; 
-						}else{
-							$totalFileSize =  round($totalSize, 2);
-						}
-
+						
 					?> <!-- to get image by jsoncode -->
 
 					<div class="mb-content">
@@ -51,8 +65,15 @@ $current_user = $user->id;
 							<?php echo $art_result->introtext; ?>
 						</div>
 
-						<a class="sendEmail" data-currentuserid="<?php echo $current_user; ?>" data-currentimagename="<?php echo $imgName; ?>" download="<?php echo $imgName; ?>" title="<?php echo $imgName; ?> ( <?php  echo $totalFileSize; ?> MB )" href="<?php echo $imageUrl; ?>">
-							<img class="<?php echo $none; ?>" src="<?php echo $imageUrl; ?>" alt="<?php echo $imgName; ?>">
+						<a class="sendEmail tooltip" data-currentuserid="<?php echo $current_user; ?>" data-currentimagename="<?php echo $imgName; ?>" 
+							download="<?php echo $imgName; ?>" title="<?php echo $imgName; ?>" href="<?php echo $imageUrl; ?>">
+
+							<?php if (!in_array($ext, $extensions)) { ?>
+						       	<img class="<?php echo $none; ?>" src="<?php echo $imageUrl; ?>" alt="<?php echo $imgName; ?>">
+								<?php }else{ ?>
+										<img class="<?php echo $none; ?>" src="modules/mod_listingpage/images/pdf-2.jpg">
+								<? } ?>
+								
 						</a>
 						<div class="lpclear"></div>
 						<!-- <div class="gfbemail <?php echo $none; ?>">
@@ -67,7 +88,7 @@ $current_user = $user->id;
 	</div>
 <?php }else{ ?>
 	<div class="main-body">
-		<div class="mb-title">Select Specific Category.</div>
+		<div class="mb-title">Select Specific Category First.</div>
 		<div class="mb-main--cont">
 			<div class="mb-content">
 				<div class="mb-detail?>">
@@ -80,6 +101,8 @@ $current_user = $user->id;
 
 
 <script type="text/javascript">
+
+
 	$(function(){
 		$(".sendEmail").click(function(){
 

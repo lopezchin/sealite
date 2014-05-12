@@ -3,10 +3,13 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 $doc=JFactory::getDocument();
 $doc->addStyleSheet(JURI::root().'/modules/mod_eventlisting/css/mod_eventlisting.css');
 
-foreach ( $cat_news as $cat_result );
+// foreach ( $cat_news as $cat_result );
 
 ?>
 
+<?php if($cat_news != "" || $cat_news != null ){ 
+	foreach ( $cat_news as $cat_result );
+?>
 
 <div class="event-listing">
 	<div class="sorter">
@@ -57,3 +60,20 @@ foreach ( $cat_news as $cat_result );
 			<?php } ?>
 	</div>
 </div>
+
+
+<?php }else{ ?>
+	<div class="event-listing">
+	<div class="sorter">
+		<div class="event-listing--title event-left">
+			<span>Select specific categories for event.</span>
+		</div>
+
+		<div class="clear"></div>
+	</div>
+
+	<div class="event-detail">
+		
+	</div>
+</div>
+<?php } ?>

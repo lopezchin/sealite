@@ -20,14 +20,22 @@ class modEventListHelper
      * @access public
      */    
     public static function fetchCategoryId( $params ){
-        $cat_id = $params->get('category_id');
+        $cat_id = $params->get('catid',array());
 
+        //use this foreach condition for getting the value of xml field check at .xml file of this module
+        if($cat_id==null){
+            $cat_id=null;
+        }else{
+            foreach($cat_id as $ids) {
+                $id = $ids;
+            }
+        }
         // Get a db connection. 
         $db = JFactory::getDbo();
         $query = $db->getQuery(true);
         $query->select($db->quoteName(array('id', 'title', 'alias', 'published', 'path')));
         $query->from($db->quoteName('#__categories'));
-        $query->where($db->quoteName('id') . ' LIKE '. $cat_id);
+        $query->where($db->quoteName('id') . ' LIKE '. $id);
         $db->setQuery($query);
 
         $cat_result = $db->loadObjectList();
@@ -38,14 +46,28 @@ class modEventListHelper
 
     public static function getCategory( $params ){
 
-        $cat_id = $params->get('category_id');
+        $cat_id = $params->get('catid',array());
+
+        if($cat_id==null){
+            $cat_id=null;
+        }else{
+            foreach($cat_id as $ids) {
+                $id = $ids;
+            }
+        }
+
+        
+
+        //use this foreach condition for getting the value of xml field check at .xml file of this module
+
+
         $db = JFactory::getDbo();
         
         $query = $db->getQuery(true);
         
         $query->select($db->quoteName(array('id', 'title', 'alias', 'catid', 'images', 'created', 'state', 'introtext')));
         $query->from($db->quoteName('#__content'));
-        $query->where($db->quoteName('catid') . ' LIKE '. $cat_id);
+        $query->where($db->quoteName('catid') . ' LIKE '. $id);
         $query->order('ordering ASC');
         
         $db->setQuery($query);
