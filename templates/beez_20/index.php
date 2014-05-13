@@ -196,8 +196,7 @@ $doc->addScript($this->baseurl.'/templates/'.$this->template.'/javascript/amenu.
 													        </div>
 													        <div class="account-login">
 													         	<div class="al-title">Account Login</div>													         	
-															 	<jdoc:include type="modules" name="cred-reg-sign" />
-															 	<jdoc:include type="message" />												                
+															 	<jdoc:include type="modules" name="cred-reg-sign" />											                
 															</div>
 															 <div class="clear"></div>
 														</div>

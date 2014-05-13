@@ -745,7 +745,7 @@ class JApplication extends JObject
 		}
 
 		// Trigger onUserLoginFailure Event.
-		$this->triggerEvent('onUserLoginFailure', array((array) $response));
+		// $this->triggerEvent('onUserLoginFailure', array((array) $response));
 
 		// If silent is set, just return false.
 		if (isset($options['silent']) && $options['silent'])
